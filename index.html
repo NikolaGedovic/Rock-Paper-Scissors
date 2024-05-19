@@ -27,10 +27,11 @@
       </div>
       <div class="scores">
         <div class="player-score score">
+          <div class="your-score-text">You</div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="10rem"
-            height="10rem"
+            width="8rem"
+            height="8rem"
             viewBox="0 0 24 24"
           >
             <path
@@ -40,10 +41,11 @@
           </svg>
         </div>
         <div class="computer-score score">
+          <div class="computer-score-text">Computer</div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="10rem"
-            height="10rem"
+            width="8rem"
+            height="8rem"
             viewBox="0 0 24 24"
           >
             <path
@@ -101,7 +103,21 @@
           </svg>
         </div>
       </div>
+      <div class="choice-text-container">
+        <div class="choice-display" id="player-choice-display">You chose:</div>
+        <div class="choice-display" id="computer-choice-display">
+          Computer chose:
+        </div>
+      </div>
+      <div id="winner"></div>
     </main>
+    <!-- <footer>
+      <div>
+        <a href="https://github.com/NikolaGedovic"
+          >Nikola Gedovic <span>&#169;</span></a
+        >
+      </div>
+    </footer> -->
     <script src="script.js"></script>
   </body>
 </html>

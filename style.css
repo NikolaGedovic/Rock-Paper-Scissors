@@ -27,7 +27,7 @@ body {
 
 .heading-text {
   font-family: "Jaro", sans-serif;
-  font-size: 3.3rem;
+  font-size: 3rem;
   color: var(--heading-txt-color);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--main-bg-color);
@@ -53,7 +53,7 @@ body {
 
 .content-heading>h2 {
   font-family: "Crimson Text", sans-serif;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: var(--font-color);
   margin: 0;
 }
@@ -68,13 +68,26 @@ body {
 .scores {
   display: flex;
   gap: 3rem;
-  margin: 3rem 0;
+  margin: 2.3rem 0 1rem 0;
+}
+
+.your-score-text,
+.computer-score-text {
+  font-size: 2rem;
+}
+
+.computer-score,
+.player-score {
+  font-size: 4.5rem;
+  color: var(--font-color);
+  font-family: "Dancing Script";
 }
 
 .score {
   width: 10.4rem;
   height: 10.4rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -99,7 +112,39 @@ body {
   transition: .2s ease-in;
 }
 
-.card:hover {
+/* Hover animation for enabled cards */
+.card:not(.disabled):hover {
   cursor: pointer;
   transform: scale(1.07);
+}
+
+/* Disable hover animation for disabled cards */
+.card.disabled:hover {
+  cursor: default;
+  transform: none;
+}
+
+.choice-text-container {
+  display: flex;
+  justify-content: space-around;
+  width: 55rem;
+  padding-top: 1rem;
+}
+
+.choice-display {
+  font-size: 2.1rem;
+  font-family: "Dancing Script";
+  color: var(--font-color);
+}
+
+#winner {
+  width: 600px;
+  height: 50px;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  font-family: "Dancing Script";
+  color: var(--font-color);
 }
