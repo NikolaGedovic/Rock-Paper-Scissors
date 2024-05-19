@@ -25,6 +25,13 @@ function getComputerChoice() {
   return choices[random];
 }
 
+function displayChoice() {
+  document.querySelector("#player-choice-display").innerHTML = `You chose: ${playerChoice.toUpperCase()}`;
+
+  document.querySelector("#computer-choice-display").innerHTML = `Computer chose: ${computerChoice.toUpperCase()}`;
+}
+
+
 // Game Logic
 function playRound() {
   computerChoice = getComputerChoice();
@@ -39,7 +46,7 @@ function playRound() {
 
   // Call the function to update the scores
   scoreUpdate();
-
+  displayChoice();
 }
 
 // Determine The Winner
