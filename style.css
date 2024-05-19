@@ -112,9 +112,16 @@ body {
   transition: .2s ease-in;
 }
 
-.card:hover {
+/* Hover animation for enabled cards */
+.card:not(.disabled):hover {
   cursor: pointer;
   transform: scale(1.07);
+}
+
+/* Disable hover animation for disabled cards */
+.card.disabled:hover {
+  cursor: default;
+  transform: none;
 }
 
 .choice-text-container {

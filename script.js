@@ -73,11 +73,20 @@ function playRound() {
 
     // Update the winner display
     document.querySelector("#winner").innerHTML = overallWinner;
+
+    // Disable further clicks on player choice buttons
+    document.querySelector('#rock').onclick = null;
+    document.querySelector('#paper').onclick = null;
+    document.querySelector('#scissors').onclick = null;
+
+    // Add disabled class to cards to remove hover animation and change cursor
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.add('disabled');
+      // Change background color to heading background color
+      card.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--heading-bg-color');
+    });
   }
 }
-
-
-
 
 
 // Determine The Winner
