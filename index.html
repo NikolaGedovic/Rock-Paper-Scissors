@@ -27,10 +27,11 @@
       </div>
       <div class="scores">
         <div class="player-score score">
+          <div class="your-score-text">You</div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="10rem"
-            height="10rem"
+            width="8rem"
+            height="8rem"
             viewBox="0 0 24 24"
           >
             <path
@@ -40,10 +41,11 @@
           </svg>
         </div>
         <div class="computer-score score">
+          <div class="computer-score-text">Computer</div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="10rem"
-            height="10rem"
+            width="8rem"
+            height="8rem"
             viewBox="0 0 24 24"
           >
             <path
@@ -100,6 +102,10 @@
             <path fill="none" d="M0 0h36v36H0z" />
           </svg>
         </div>
+      </div>
+      <div class="choice-text-container">
+        <div class="choice-display" id="player-choice-display"></div>
+        <div class="choice-display" id="computer-choice-display"></div>
       </div>
     </main>
     <script src="script.js"></script>
