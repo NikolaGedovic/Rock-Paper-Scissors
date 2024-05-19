@@ -71,6 +71,13 @@ body {
   margin: 3rem 0;
 }
 
+.computer-score,
+.player-score {
+  font-size: 4rem;
+  color: var(--font-color);
+  font-family: "Dancing Script";
+}
+
 .score {
   width: 10.4rem;
   height: 10.4rem;

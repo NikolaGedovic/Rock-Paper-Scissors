@@ -29,9 +29,17 @@ function getComputerChoice() {
 function playRound() {
   computerChoice = getComputerChoice();
   const result = determineWinner(playerChoice, computerChoice);
-  console.log("Player Choice: " + playerChoice);
-  console.log("Computer Choice: " + computerChoice);
-  console.log(result);
+
+  // Update the scores
+  if (result === "You Win!") {
+    playerScore++;
+  } else if (result === "You Lose!") {
+    computerScore++;
+  }
+
+  // Call the function to update the scores
+  scoreUpdate();
+
 }
 
 // Determine The Winner
@@ -49,3 +57,13 @@ function determineWinner(playerChoice, computerChoice) {
   }
 }
 
+// Function to keep track of scores
+function scoreUpdate() {
+  // Select the elements where the scores are displayed
+  const playerScoreElement = document.querySelector(".player-score");
+  const computerScoreElement = document.querySelector(".computer-score");
+
+  // Update the elements with current score
+  playerScoreElement.textContent = playerScore;
+  computerScoreElement.textContent = computerScore;
+}
