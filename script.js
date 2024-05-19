@@ -25,18 +25,21 @@ function getComputerChoice() {
   return choices[random];
 }
 
+// Display choices
 function displayChoice() {
   document.querySelector("#player-choice-display").innerHTML = `You chose: ${playerChoice.toUpperCase()}`;
 
   document.querySelector("#computer-choice-display").innerHTML = `Computer chose: ${computerChoice.toUpperCase()}`;
 }
 
+// Display winner
 function displayWinner(result) {
   document.querySelector("#winner").innerHTML = result;
 }
 
 // Game Logic
 function playRound() {
+  // Proceed with the game logic for each round
   computerChoice = getComputerChoice();
   const result = determineWinner(playerChoice, computerChoice);
 
@@ -55,7 +58,27 @@ function playRound() {
 
   // Call the function to display the winner
   displayWinner(result);
+
+  // Check if either player or computer have a score of 5
+  if (playerScore === 5 || computerScore === 5) {
+    // Determine Overall Winner
+    let overallWinner = "";
+    if (playerScore > computerScore) {
+      overallWinner = "YOU WON THE GAME!";
+    } else if (playerScore < computerScore) {
+      overallWinner = "YOU LOST THE GAME!";
+    } else {
+      overallWinner = "IT'S A DRAW!";
+    }
+
+    // Update the winner display
+    document.querySelector("#winner").innerHTML = overallWinner;
+  }
 }
+
+
+
+
 
 // Determine The Winner
 function determineWinner(playerChoice, computerChoice) {
